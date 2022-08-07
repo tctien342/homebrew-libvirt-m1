@@ -63,16 +63,20 @@ class VirtManager < Formula
   # virt-manager doesn't prompt for password on macOS unless --no-fork flag is provided
   patch :DATA
 
-  def install
+  def install    
     venv = virtualenv_create(libexec, "python3")
-
+    venv.pip_install resources
     system "python3", "-m", "venv", "--upgrade-deps", "#{libexec}"
 
-    venv.pip_install resources
-
     # virt-manager uses distutils, doesn't like --single-version-externally-managed
-    system libexec/"bin/python", "setup.py", "configure", "--prefix=#{libexec}"
-    system libexec/"bin/python", "setup.py", "--no-user-cfg", "--no-update-icon-cache", "--no-compile-schemas", "install"
+    system "#{libexec}/bin/python", "setup.py",
+                     "configure",
+                     "--prefix=#{libexec}"
+    system "#{libexec}/bin/python", "setup.py",
+                     "--no-user-cfg",
+                     "--no-update-icon-cache",
+                     "--no-compile-schemas",
+                     "install"
 
     # install virt-manager commands with PATH set to Python virtualenv environment
     bin.install Dir[libexec/"bin/virt-*"]
