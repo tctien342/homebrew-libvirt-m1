@@ -40,10 +40,10 @@ class VirtManager < Formula
     sha256 "467fbad99067910785144ce333826c71fb0e63a425657295239737f7ecd125f3"
   end
 
-  resource "libvirt-python" do
-    url "https://files.pythonhosted.org/packages/20/fa/b8c7263b48dec918a5ce9c08ca457ef19836b87dd3f6ce91ff19e09c35fc/libvirt-python-7.8.0.tar.gz"
-    sha256 "9d07416d66805bf1a17f34491b3ced2ac6c42b6a012ddf9177e0e3ae1b103fd5"
-  end
+  # resource "libvirt-python" do
+  #   url "https://libvirt.org/sources/python/libvirt-python-8.6.0.tar.gz"
+  #   sha256 "9d07416d66805bf1a17f34491b3ced2ac6c42b6a012ddf9177e0e3ae1b103fd5"
+  # end
 
   resource "pycairo" do
     url "https://files.pythonhosted.org/packages/bc/3f/64e6e066d163fbcf13213f9eeda0fc83376243335ea46a66cefd70d62e8f/pycairo-1.20.1.tar.gz"
