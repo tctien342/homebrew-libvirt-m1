@@ -7,7 +7,7 @@ class VirtManager < Formula
   sha256 "2b6fe3d90d89e1130227e4b05c51e6642d89c839d3ea063e0e29475fd9bf7b86"
   revision 7
 
-  head "https://github.com/virt-manager/virt-manager.git", :branch => "main"
+  head "https://github.com/tctien342/virt-manager.git", :branch => "master"
 
   depends_on "docutils" => :build
   depends_on "gettext" => :build
